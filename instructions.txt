@@ -1,0 +1,49 @@
+To compile the patterns open a terminal in the RTEC folder,
+and navigate to the maritime patterns.
+
+RTEC/examples/maritime/CE\ patterns/ 
+
+Then open YAP prolog by typing in the shell 'yap'.
+
+$ yap
+
+Inside YAP prolog, first, you have to load the main file of RTEC.
+
+?- ['../../../src/RTEC.prolog'].
+
+Then call the predicate 'compileEventDescription' with the appropriate values.
+
+?- compileEventDescription('declarations.prolog','patterns.prolog','compiled_patterns.prolog').
+
+If there was no error, and Prolog answered with 'yes',
+then that's it, close YAP by typing 'halt.' (without the quotes) or ^D (EOF).
+
+To perform recognition navigate to the execution scripts folder
+of the maritime example...
+
+RTEC/examples/maritime/execution\ scripts/
+
+open a terminal there and open YAP prolog.
+Load the 'continuousQueries.prolog' file...
+
+?- ['continuousQueries.prolog'].
+
+load the declarations, and the compiled patterns...
+
+?- ['../CE\ patterns/declarations.prolog'].
+?- ['../CE\ patterns/compiled_patterns.prolog'].
+
+then load static data, and some utils, both necessary
+for recognition.
+
+?- ['../data/static/loadStaticData.prolog'].
+?- ['../utils/loadUtils.prolog'].
+
+Now you are ready to perform recognition.
+Call the predicate 'continuousER' with the appropriate parameters.
+
+%continuousER(DatasetFile,RecognisedCEsFile,RecognitionTimesFile,InputStatisticsFile,StartTime,EndTime,Step,Window)
+
+?- continuousER('../data/dynamic/preprocessed_dataset_RTEC_critical_nd.csv','../results/maritime_results.txt','stats_times.txt','stats_input.txt',1443650401,1456531202,3600,3600).
+
+

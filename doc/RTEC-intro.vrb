@@ -1,0 +1,25 @@
+\frametitle{RTEC: Recognition}
+\footnotesize
+Load the necessary files and perform recognition.
+\begin{lstlisting}[language=Prolog, basicstyle=\tiny,]
+['continuousQueries.prolog']
+['declarations.prolog'].
+['compiled_patterns.prolog'].
+['vessels.prolog'].
+
+% continuousER(
+%   DatasetFile, DatasetFile is the input dataset file
+%   OutputFile,  OutputFile records recognised CEs
+%   TimesFile,   TimesFile records the event recognition times,
+%   InputFile,   InputFile records the number of input events per window,
+%   InitPoint,   InitPoint is where recognition starts,
+%   LastTime,    LastTime is where recognition ends,
+%   WM,          WM is the window size,
+%   Step         Step is the recognition step.
+%  )
+
+continuousER('dataset.txt','recognised_CEs.txt',
+              'stats_times.txt','stats_input.txt',
+              1455926402,1456358403,86400,86400).
+\end{lstlisting}
+

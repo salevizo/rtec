@@ -1,0 +1,2 @@
+portStatus(nearPort).
+portStatus(farFromPorts).
