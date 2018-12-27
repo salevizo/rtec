@@ -46,4 +46,6 @@ Call the predicate 'continuousER' with the appropriate parameters.
 
 ?- continuousER('../data/dynamic/preprocessed_dataset_RTEC_critical_nd.csv','../results/maritime_results.txt','stats_times.txt','stats_input.txt',1443650401,1456531202,3600,3600).
 
+#SOFIA:
+Run it with tat file final_preprocessed_dataset_RTEC_critical_nd.csv, it has the same input as the on used on flink
 
