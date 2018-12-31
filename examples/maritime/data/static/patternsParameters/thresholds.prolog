@@ -6,7 +6,7 @@ thresholds(underWayMin,2.7).
 thresholds(underWayMax,48.6).
 
 %adrift
-thresholds(adriftAngThr,40.0).
+thresholds(adriftAngThr,60.0).
 
 %atAnchorOrMoored
 thresholds(aOrMTime,1800).

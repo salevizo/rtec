@@ -154,7 +154,7 @@ initiatedAt(adrift(Vessel) = true, T):-
     holdsAt(underWay(Vessel)=true,T),
     absoluteAngleDiff(CourseOverGround,TrueHeading,AngleDiff),
     thresholds(adriftAngThr,AdriftAngThr),
-    AngleDiff > AdriftAngThr.
+    AdriftAngThr > AngleDiff > 15.0.
 
 terminatedAt(adrift(Vessel) = true, T):-
     happensAt(velocity(Vessel,_Speed,CourseOverGround,TrueHeading),T),
@@ -162,7 +162,7 @@ terminatedAt(adrift(Vessel) = true, T):-
     holdsAt(underWay(Vessel)=true,T),
     absoluteAngleDiff(CourseOverGround,TrueHeading,AngleDiff),
     thresholds(adriftAngThr,AdriftAngThr),
-    AngleDiff < AdriftAngThr.
+    AngleDiff > AdriftAngThr.
 
 terminatedAt(adrift(Vessel) = true, T):-
     happensAt(gap_init(Vessel), T).
