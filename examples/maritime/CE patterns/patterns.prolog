@@ -154,7 +154,8 @@ initiatedAt(adrift(Vessel) = true, T):-
     holdsAt(underWay(Vessel)=true,T),
     absoluteAngleDiff(CourseOverGround,TrueHeading,AngleDiff),
     thresholds(adriftAngThr,AdriftAngThr),
-    AdriftAngThr > AngleDiff > 15.0.
+    AdriftAngThr > AngleDiff,
+    AngleDiff > 15.0
 
 terminatedAt(adrift(Vessel) = true, T):-
     happensAt(velocity(Vessel,_Speed,CourseOverGround,TrueHeading),T),
